@@ -46,10 +46,3 @@ export const deleteProject = id => async dispatch => {
         });
     }
 }
-
-export const clearErrors = () => async dispatch => {
-    dispatch({
-        type: GET_ERRORS,
-        payload: {}
-    });
-}

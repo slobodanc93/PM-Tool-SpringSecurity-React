@@ -117,7 +117,7 @@ class AddProjectTask extends Component {
                                     <option value="2">MEDIUM</option>
                                     <option value="1">HIGH</option>
                                 </select>
-                                <label className="form-control-placeholder" htmlFor="status">Select Priority</label>
+                                <label className="form-control-placeholder" htmlFor="priority">Select Priority</label>
                             </div>
                             <div className="form-group">
                                 <input type="date" 
@@ -128,7 +128,7 @@ class AddProjectTask extends Component {
                                     onChange={this.onChange} 
                                     min={this.state.today}
                                 />
-                                <label className="form-control-placeholder" htmlFor="status">Due date</label>
+                                <label className="form-control-placeholder" htmlFor="dueDate">Due date</label>
                             </div>
                             <input 
                                 type="submit" 

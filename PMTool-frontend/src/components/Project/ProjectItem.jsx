@@ -19,7 +19,7 @@ class ProjectItem extends Component {
                 <div className="card card-body bg-light mb-3">
                     <div className="row">
                         <div className="col-3 col-md-2">
-                            <span className="mx-auto">{project.projectIdentifier}</span>
+                            <h3><span className="badge badge-info mx-auto">{project.projectIdentifier}</span></h3>
                         </div>
                         <div className="col-lg-6 col-md-4 col-8">
                             <h3>{project.projectName}</h3>

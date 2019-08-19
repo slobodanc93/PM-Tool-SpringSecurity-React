@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getBacklog, clearErrors } from '../../actions/projectTaskActions';
+import { getBacklog } from '../../actions/projectTaskActions';
 import Backlog from './Backlog';
 
 class ProjectBoard extends Component {
@@ -18,7 +18,6 @@ class ProjectBoard extends Component {
 
     componentDidMount() {
         this.props.getBacklog(this.state.projectIdentifier);
-        this.props.clearErrors();
     }
 
     UNSAFE_componentWillReceiveProps(nextProps) {
@@ -56,6 +55,8 @@ class ProjectBoard extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
+                        {
+                        !errors.projectNotFound &&
                         <div>
                             <Link to={`/addProjectTask/${this.state.projectIdentifier}`}>
                                 <div className="action-button">
@@ -66,6 +67,7 @@ class ProjectBoard extends Component {
                             <h2 className="text-center"><b>{this.state.projectIdentifier}</b> Backlog</h2>
                             <hr width="50%" style={{marginBottom: '40px'}} />
                         </div>
+                        }
                         {BoardContent}
                     </div>
                 </div>
@@ -77,7 +79,6 @@ class ProjectBoard extends Component {
 ProjectBoard.propTypes = {
     getBacklog : PropTypes.func.isRequired,
     projectTasks : PropTypes.object.isRequired,
-    clearErrors: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired
 }
 
@@ -86,4 +87,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-export default connect(mapStateToProps, {getBacklog, clearErrors}) (ProjectBoard);
+export default connect(mapStateToProps, {getBacklog}) (ProjectBoard);

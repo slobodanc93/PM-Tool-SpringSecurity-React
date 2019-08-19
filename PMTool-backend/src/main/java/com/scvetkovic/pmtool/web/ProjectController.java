@@ -3,6 +3,7 @@ package com.scvetkovic.pmtool.web;
 import com.scvetkovic.pmtool.domain.Project;
 import com.scvetkovic.pmtool.services.MapValidationErrorService;
 import com.scvetkovic.pmtool.services.ProjectService;
+import com.scvetkovic.pmtool.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -23,25 +25,28 @@ public class ProjectController {
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
 
+
     @PostMapping("")
     public ResponseEntity<?> createNewProject(
             @Valid @RequestBody Project project,
-            BindingResult result) {
+            BindingResult result,
+            Principal principal) {
 
         ResponseEntity<?> errorMap = mapValidationErrorService.mapValidation(result);
         if(errorMap != null)
             return errorMap;
 
-        Project newProject = projectService.saveOrUpdateProject(project);
+        Project newProject = projectService.saveOrUpdateProject(project, principal.getName());
         return new ResponseEntity<Project>(newProject, HttpStatus.CREATED);
     }
 
 
     @GetMapping("/{projectIdentifier}")
     public ResponseEntity<?> getProjectByIdentifier(
-            @PathVariable String projectIdentifier) {
+            @PathVariable String projectIdentifier,
+            Principal principal) {
 
-        Project project = projectService.findByProjectIdentifier(projectIdentifier);
+        Project project = projectService.findByProjectIdentifier(projectIdentifier, principal.getName());
         if(project == null) {
             return new ResponseEntity<String>("Project ID does not exist.", HttpStatus.NOT_FOUND);
         }
@@ -49,16 +54,17 @@ public class ProjectController {
     }
 
     @GetMapping("")
-    public ResponseEntity<List<Project>> getAllProjects() {
-        List<Project> projects = projectService.findAll();
+    public ResponseEntity<List<Project>> getAllProjects(Principal principal) {
+        List<Project> projects = projectService.findAll(principal.getName());
         return new ResponseEntity<>(projects, HttpStatus.OK);
     }
 
     @DeleteMapping("/{projectId}")
     public ResponseEntity<?> delete(
-        @PathVariable String projectId) {
+        @PathVariable String projectId,
+        Principal principal) {
 
-        Project project = projectService.delete(projectId);
+        Project project = projectService.delete(projectId, principal.getName());
         if(project == null) {
             return new ResponseEntity<String>("Project ID does not exist.", HttpStatus.NOT_FOUND);
         } else {

@@ -46,7 +46,7 @@ class AddProject extends Component {
         const { errors } = this.state;
         return (
             <div className="project">
-                <div className="container">
+                <div className="container mb-5">
                     <div className="row">
                         <div className="col-md-8 m-auto">
                             <h5 className="display-4 text-center">New Project</h5>

@@ -50,4 +50,11 @@ public class Project {
     @JsonIgnore
     private Backlog backlog;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id", nullable = false)
+    @JsonIgnore
+    private User user;
+
+    private String projectLeader;
+
 }

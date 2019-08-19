@@ -25,6 +25,10 @@ export const getBacklog = (project_identifier) => async dispatch => {
             type: GET_PROJECT_TASKS,
             payload: res.data
         });
+        dispatch({
+            type: GET_ERRORS,
+            payload: {}
+        });
     } catch(errors) {
         dispatch({
             type: GET_ERRORS,
@@ -72,11 +76,4 @@ export const updateProjectTask = (projectIdentifier, projectSequence, projectTas
           });
     }
 
-}
-
-export const clearErrors = () => async dispatch => {
-    dispatch({
-        type: GET_ERRORS,
-        payload: {}
-    });
 }
