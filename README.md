@@ -2,6 +2,15 @@
 
 Project Management application is a system for managing projects and tasks for specific project based on various statuses. It enables users to add, complete and remove tasks within project. Also, login using Spring Security is provided
 
+## Screenshots
+<img src="screenshots/Screenshot_1.jpg"> 
+<img src="screenshots/Screenshot_2.jpg"> 
+<img src="screenshots/Screenshot_3.jpg"> 
+<img src="screenshots/Screenshot_4.jpg"> 
+<img src="screenshots/Screenshot_5.jpg"> 
+<img src="screenshots/Screenshot_6.jpg"> 
+<img src="screenshots/Screenshot_7.jpg"> 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
