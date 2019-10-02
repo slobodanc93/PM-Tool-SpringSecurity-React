@@ -21,7 +21,7 @@ These instructions will get you a copy of the project up and running on your loc
 - Java IDE e.g. [Eclipse Java EE IDE for Web Developers](https://www.eclipse.org/downloads/)
 - [MySQL Database Server](https://netbeans.org/kb/docs/ide/install-and-configure-mysql-server.html)
 - [MySQL Workbench](https://dev.mysql.com/downloads/workbench/)
-- [Node.js](https://nodejs.org/en/]
+- [Node.js](https://nodejs.org/en/])
 - Text editor e.g. [Visual Studio Code](https://code.visualstudio.com/Download)
 
 ### Installing Backend
