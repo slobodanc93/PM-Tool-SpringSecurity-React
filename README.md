@@ -17,12 +17,12 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-- Java Development Kit [https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html]
-- Java IDE, preferably Eclipse Java EE IDE for Web Developers [https://www.eclipse.org/downloads/]
-- MySQL Database Server [https://netbeans.org/kb/docs/ide/install-and-configure-mysql-server.html]
-- MySQL Workbench for database access (not mandatory) [https://dev.mysql.com/downloads/workbench/]
-- Node.js [https://nodejs.org/en/]
-- Text editor, preferably Visual Studio Code [https://code.visualstudio.com/Download]
+- [Java Development Kit] (https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+- Java IDE e.g. [Eclipse Java EE IDE for Web Developers] (https://www.eclipse.org/downloads/)
+- [MySQL Database Server] (https://netbeans.org/kb/docs/ide/install-and-configure-mysql-server.html)
+- [MySQL Workbench]  (https://dev.mysql.com/downloads/workbench/)
+- [Node.js] (https://nodejs.org/en/]
+- Text editor e.g. [Visual Studio Code] (https://code.visualstudio.com/Download)
 
 ### Installing Backend
 
