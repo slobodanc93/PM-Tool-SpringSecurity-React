@@ -1,6 +1,7 @@
 # Project Management application
 
 Project Management application is a system for managing projects and tasks for specific project based on various statuses. It enables users to add, complete and remove tasks within project. Also, login using Spring Security and JWT is provided.
+React part of application is also secured in a way that user who is not logged in can't gain access to certain pages.
 
 ## Screenshots
 <img src="screenshots/Screenshot_1.png"> 
